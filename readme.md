@@ -26,6 +26,7 @@
 
 #### JS
 
+- [x] Burgermenu
 - [] Fade transitions
 - [] Dark mode
 

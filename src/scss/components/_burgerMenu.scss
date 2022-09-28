@@ -51,15 +51,17 @@
       @include icon-before(0.15rem, 30px, 10px);
     }
   }
-  &.open {
+  &.show {
     .icon {
       transition-duration: 0.5s;
       background: transparent;
       &:before {
         transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
+        background-color: $color-main;
       }
       &:after {
         transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+        background-color: $color-main;
       }
     }
   }

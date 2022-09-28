@@ -46,10 +46,17 @@ header {
       grid-area: burger;
       justify-self: right;
     }
-
     nav {
       h3 {
         margin-bottom: 0;
+      }
+      ul {
+        display: none;
+      }
+      ul.show {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
       }
       background-color: $color-white;
       position: absolute;

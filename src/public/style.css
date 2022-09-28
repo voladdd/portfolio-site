@@ -151,6 +151,14 @@ header li.open a, header li:hover a {
   header nav h3 {
     margin-bottom: 0;
   }
+  header nav ul {
+    display: none;
+  }
+  header nav ul.show {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
 }
 .works {
   display: grid;
@@ -176,7 +184,7 @@ header li.open a, header li:hover a {
   object-fit: cover;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .works {
     grid-template-columns: 1fr;
   }
@@ -216,15 +224,17 @@ header li.open a, header li:hover a {
   content: "";
   top: 10px;
 }
-.burger.open .icon {
+.burger.show .icon {
   transition-duration: 0.5s;
   background: transparent;
 }
-.burger.open .icon:before {
+.burger.show .icon:before {
   transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
+  background-color: #bf0426;
 }
-.burger.open .icon:after {
+.burger.show .icon:after {
   transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+  background-color: #bf0426;
 }
 .burger:hover {
   cursor: pointer;
