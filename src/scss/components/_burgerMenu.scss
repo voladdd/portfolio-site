@@ -1,0 +1,75 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/layouts" as *;
+
+@mixin btn($right, $top) {
+  position: relative;
+  height: calc(0.15rem * 3 + 10px * 2);
+  display: block;
+  width: 30px;
+  top: $top;
+  right: $right;
+  transition-duration: 0.5s;
+}
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 2.5em;
+  background-color: $color-black;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $color-black;
+  content: "";
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $color-black;
+  content: "";
+  top: $top;
+}
+
+.burger {
+  @include btn(0px, -30px);
+  .icon {
+    @include icon(0.15rem, 30px);
+    &:before {
+      @include icon-before(0.15rem, 30px, -10px);
+    }
+    &:after {
+      @include icon-before(0.15rem, 30px, 10px);
+    }
+  }
+  &.open {
+    .icon {
+      transition-duration: 0.5s;
+      background: transparent;
+      &:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
+      }
+      &:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .burger {
+    display: none;
+  }
+}

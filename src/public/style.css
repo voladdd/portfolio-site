@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    grid-template-columns: 1fr;
+    margin: 0 1.5rem;
+  }
+}
+/* Box sizing rules */
+/* Remove default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+ul[role=list] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  background-color: #f2f2f2;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons + reset styles */
+a,
+a:visited,
+input,
+button,
+textarea,
+fieldset,
+select {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  color: inherit;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+body {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+p {
+  font-family: "Roboto";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
+button,
+a {
+  text-transform: uppercase;
+}
+
+section a {
+  font-size: 0.95rem;
+  color: inherit;
+}
+section h1 {
+  font-size: 1.25rem;
+}
+section h2 {
+  font-size: 0.9rem;
+}
+section h3 {
+  font-size: 0.85rem;
+}
+section p {
+  font-size: 1rem;
+}
+
+header {
+  z-index: 1;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+}
+header nav h3 {
+  margin-bottom: 2em;
+  grid-area: title;
+}
+header nav ul {
+  grid-area: links;
+  justify-self: right;
+}
+header nav ul li:not(:last-child) {
+  margin-bottom: 1em;
+}
+header li {
+  min-width: 5rem;
+  display: flex;
+  align-items: center;
+}
+header li img {
+  max-width: 2em;
+  content: url(../../../assets/icons/folder.close.svg);
+}
+header li.open img, header li:hover img {
+  content: url(../../../assets/icons/folder.open.svg);
+}
+header li.open a, header li:hover a {
+  color: #bf0426;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    position: relative;
+    width: 100%;
+  }
+  header .burger {
+    grid-area: burger;
+    justify-self: right;
+  }
+  header nav {
+    background-color: #f2f2f2;
+    position: absolute;
+    width: inherit;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    align-items: center;
+    grid-template-rows: 100px max-content;
+    grid-template-areas: "title burger" ".     links";
+  }
+  header nav h3 {
+    margin-bottom: 0;
+  }
+}
+.works {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+.works figure {
+  height: fit-content;
+  min-width: 20rem;
+}
+.works figure img:hover {
+  opacity: 0.75;
+}
+.works h2 {
+  color: #bf0426;
+}
+.works p {
+  color: #b2b2b2;
+}
+.works img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+}
+.burger {
+  position: relative;
+  height: calc(0.45rem + 20px);
+  display: block;
+  width: 30px;
+  top: -30px;
+  right: 0px;
+  transition-duration: 0.5s;
+}
+.burger .icon {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: 0.15rem;
+  width: 30px;
+  top: 2.5em;
+  background-color: #0d0d0d;
+}
+.burger .icon:before {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 30px;
+  height: 0.15rem;
+  background-color: #0d0d0d;
+  content: "";
+  top: -10px;
+}
+.burger .icon:after {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 30px;
+  height: 0.15rem;
+  background-color: #0d0d0d;
+  content: "";
+  top: 10px;
+}
+.burger.open .icon {
+  transition-duration: 0.5s;
+  background: transparent;
+}
+.burger.open .icon:before {
+  transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
+}
+.burger.open .icon:after {
+  transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+}
+.burger:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

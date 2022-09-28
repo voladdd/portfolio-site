@@ -1,0 +1,47 @@
+@use "./colors" as *;
+
+/* Box sizing rules */
+/* Remove default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+ul[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  background-color: $color-white;
+}
+
+// /* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons + reset styles */
+a,
+a:visited,
+input,
+button,
+textarea,
+fieldset,
+select {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  color: inherit;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}

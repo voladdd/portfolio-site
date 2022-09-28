@@ -1,0 +1,17 @@
+$side-padding: 3rem;
+
+$tablet: 768px;
+$laptop: 1024px;
+
+body {
+  margin: $side-padding;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+}
+
+@media screen and (max-width: $laptop) {
+  body {
+    grid-template-columns: 1fr;
+    margin: 0 calc($side-padding / 2);
+  }
+}

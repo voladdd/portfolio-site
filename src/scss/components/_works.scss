@@ -1,0 +1,33 @@
+@use "../abstracts/layouts" as *;
+@use "../abstracts/colors" as *;
+
+.works {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  figure {
+    height: fit-content;
+    min-width: 20rem;
+    img:hover {
+      opacity: 0.75;
+    }
+  }
+
+  h2 {
+    color: $color-main;
+  }
+  p {
+    color: $color-gray;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: $laptop) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+}
