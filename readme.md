@@ -15,13 +15,13 @@
 
 #### HTML
 
-- [] Create html using semantic elements
-- [] Layout
-- [] Proper alt names
+- [x] Work page
+- [x] About page
+- [] Etc page
 
 #### CSS
 
-- [] Responsive design for mobile, tablet, pc
+- [x] Responsive design for mobile, tablet, pc
 - [] Custom scrollbar
 
 #### JS

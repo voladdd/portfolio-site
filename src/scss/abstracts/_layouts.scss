@@ -1,3 +1,6 @@
+@use "./colors" as *;
+@use "./typography" as *;
+
 $side-padding: 3rem;
 
 $tablet: 768px;
@@ -9,9 +12,42 @@ body {
   grid-template-columns: 0.25fr 0.75fr;
 }
 
+.text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  column-gap: 1rem;
+  margin-bottom: 3rem;
+  p {
+    color: $color-gray;
+  }
+  p:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  img {
+    margin-bottom: 2rem;
+  }
+  a,
+  span {
+    text-transform: none;
+    color: $color-main;
+  }
+  a,
+  p {
+    font-family: $font-type-second;
+  }
+}
+
 @media screen and (max-width: $laptop) {
   body {
     grid-template-columns: 1fr;
     margin: 0 calc($side-padding / 2);
+  }
+  .content {
+    margin-top: 100px;
   }
 }

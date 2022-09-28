@@ -1,0 +1,20 @@
+@use "../abstracts/layouts" as *;
+@use "../abstracts/colors" as *;
+
+.about {
+  .expertise {
+    &__text-block {
+      display: flex;
+      flex-direction: row;
+      li {
+        color: $color-gray;
+      }
+    }
+    .text-block:nth-child(1) {
+      margin-right: 2rem;
+    }
+  }
+  h3 {
+    color: $color-main;
+  }
+}

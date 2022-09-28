@@ -3,6 +3,7 @@ $font-size-medium: 1rem;
 $font-size-huge: 1.25rem;
 
 $font-type-main: "IBM Plex Mono";
+$font-type-second: "Roboto";
 
 body {
   font-family: "IBM Plex Mono", sans-serif;
@@ -20,6 +21,10 @@ h5 {
   font-weight: 400;
 }
 
+h1 {
+  font-size: $font-size-huge;
+}
+
 button,
 a {
   text-transform: uppercase;
@@ -30,16 +35,13 @@ section {
     font-size: $font-size-small;
     color: inherit;
   }
-  h1 {
-    font-size: $font-size-huge;
-  }
-  h2 {
+  h2,
+  h3 {
     font-size: calc($font-size-medium * 0.9);
   }
-  h3 {
-    font-size: calc($font-size-medium * 0.85);
-  }
-  p {
+  p,
+  li {
     font-size: $font-size-medium;
+    font-family: "Roboto";
   }
 }

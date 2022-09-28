@@ -1,15 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+p {
+  font-family: "Roboto";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+button,
+a {
+  text-transform: uppercase;
+}
+
+section a {
+  font-size: 0.95rem;
+  color: inherit;
+}
+section h2,
+section h3 {
+  font-size: 0.9rem;
+}
+section p,
+section li {
+  font-size: 1rem;
+  font-family: "Roboto";
+}
+
+body {
   margin: 3rem;
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  column-gap: 1rem;
+  margin-bottom: 3rem;
+}
+section p {
+  color: #b2b2b2;
+}
+section p:not(:last-child) {
+  margin-bottom: 2rem;
+}
+section img {
+  margin-bottom: 2rem;
+}
+section a,
+section span {
+  text-transform: none;
+  color: #bf0426;
+}
+section a,
+section p {
+  font-family: "Roboto";
 }
 
 @media screen and (max-width: 1024px) {
   body {
     grid-template-columns: 1fr;
     margin: 0 1.5rem;
+  }
+  .content {
+    margin-top: 100px;
   }
 }
 /* Box sizing rules */
@@ -57,44 +129,6 @@ button:focus {
   outline: none;
 }
 
-body {
-  font-family: "IBM Plex Mono", sans-serif;
-}
-
-p {
-  font-family: "Roboto";
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 400;
-}
-
-button,
-a {
-  text-transform: uppercase;
-}
-
-section a {
-  font-size: 0.95rem;
-  color: inherit;
-}
-section h1 {
-  font-size: 1.25rem;
-}
-section h2 {
-  font-size: 0.9rem;
-}
-section h3 {
-  font-size: 0.85rem;
-}
-section p {
-  font-size: 1rem;
-}
-
 header {
   z-index: 1;
 }
@@ -102,7 +136,7 @@ header nav {
   display: flex;
   flex-direction: column;
 }
-header nav h3 {
+header nav h1 {
   margin-bottom: 2em;
   grid-area: title;
 }
@@ -148,7 +182,7 @@ header li.open a, header li:hover a {
     grid-template-rows: 100px max-content;
     grid-template-areas: "title burger" ".     links";
   }
-  header nav h3 {
+  header nav h1 {
     margin-bottom: 0;
   }
   header nav ul {
@@ -158,35 +192,6 @@ header li.open a, header li:hover a {
     display: flex;
     flex-direction: column;
     margin: 1rem 0;
-  }
-}
-.works {
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
-  column-gap: 2rem;
-  row-gap: 2rem;
-}
-.works figure {
-  height: fit-content;
-  min-width: 20rem;
-}
-.works figure img:hover {
-  opacity: 0.75;
-}
-.works h2 {
-  color: #bf0426;
-}
-.works p {
-  color: #b2b2b2;
-}
-.works img {
-  width: 100%;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 768px) {
-  .works {
-    grid-template-columns: 1fr;
   }
 }
 .burger {
@@ -244,6 +249,48 @@ header li.open a, header li:hover a {
   .burger {
     display: none;
   }
+}
+.works {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+.works figure {
+  height: fit-content;
+  min-width: 20rem;
+}
+.works figure img:hover {
+  opacity: 0.75;
+}
+.works h2 {
+  color: #bf0426;
+}
+.works p {
+  color: #b2b2b2;
+}
+.works img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+}
+.about .expertise__text-block {
+  display: flex;
+  flex-direction: row;
+}
+.about .expertise__text-block li {
+  color: #b2b2b2;
+}
+.about .expertise .text-block:nth-child(1) {
+  margin-right: 2rem;
+}
+.about h3 {
+  color: #bf0426;
 }
 
 /*# sourceMappingURL=style.css.map */

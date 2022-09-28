@@ -1,12 +1,13 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/layouts" as *;
+@use "../abstracts/typography" as *;
 
 header {
   z-index: 1;
   nav {
     display: flex;
     flex-direction: column;
-    h3 {
+    h1 {
       margin-bottom: 2em;
       grid-area: title;
     }
@@ -47,7 +48,7 @@ header {
       justify-self: right;
     }
     nav {
-      h3 {
+      h1 {
         margin-bottom: 0;
       }
       ul {
@@ -65,8 +66,6 @@ header {
       grid-template-columns: 0.5fr 0.5fr;
       align-items: center;
       grid-template-rows: 100px max-content;
-      //   flex-direction: row;
-      //   justify-content: space-between;
       grid-template-areas:
         "title burger"
         ".     links";
