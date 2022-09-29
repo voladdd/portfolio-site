@@ -13,6 +13,9 @@ footer {
   ul {
     grid-column: 2 / 3;
     text-align: right;
+    *:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
   }
   p {
     grid-column: 1 / 2;
