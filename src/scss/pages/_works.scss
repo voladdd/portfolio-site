@@ -4,13 +4,17 @@
 .works {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  column-gap: 2rem;
-  row-gap: 2rem;
+  column-gap: 3rem;
+  row-gap: 3rem;
+  margin-bottom: 3rem;
   figure {
     height: fit-content;
     min-width: 20rem;
     img:hover {
       opacity: 0.75;
+    }
+    figcaption {
+      margin-top: 1rem;
     }
   }
 

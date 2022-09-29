@@ -8,7 +8,7 @@
 
 - [x] Create file structure: assets & src
 - [x] Add index, style files
-- [] Download all content of sections splitted in assets
+- [ ] Download all content of sections splitted in assets
 - [x] Download neccessary fonts
 - [x] Create root font sizes
 - [x] Create root colors
@@ -17,18 +17,18 @@
 
 - [x] Work page
 - [x] About page
-- [] Etc page
+- [ ] Etc page
 
 #### CSS
 
 - [x] Responsive design for mobile, tablet, pc
-- [] Custom scrollbar
+- [ ] Custom scrollbar
 
 #### JS
 
 - [x] Burgermenu
-- [] Fade transitions
-- [] Dark mode
+- [ ] Fade transitions
+- [ ] Dark mode
 
 ## My process
 

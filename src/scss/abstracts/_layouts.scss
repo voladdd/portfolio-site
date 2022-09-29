@@ -4,7 +4,7 @@
 $side-padding: 3rem;
 
 $tablet: 768px;
-$laptop: 1024px;
+$laptop: 1025px;
 
 body {
   margin: $side-padding;
@@ -45,7 +45,8 @@ section {
 @media screen and (max-width: $laptop) {
   body {
     grid-template-columns: 1fr;
-    margin: 0 calc($side-padding / 2);
+    margin: 0 calc($side-padding / 2) calc($side-padding / 2)
+      calc($side-padding / 2);
   }
   .content {
     margin-top: 100px;
