@@ -42,6 +42,17 @@ section {
   }
 }
 
+.content {
+  &__hint {
+    font-family: $font-type-second;
+    color: $color-gray;
+    margin-bottom: 2em;
+    span {
+      color: $color-main;
+    }
+  }
+}
+
 @media screen and (max-width: $laptop) {
   body {
     grid-template-columns: 1fr;

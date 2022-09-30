@@ -75,6 +75,15 @@ section p {
   font-family: "Roboto";
 }
 
+.content__hint {
+  font-family: "Roboto";
+  color: #a8a8a8;
+  margin-bottom: 2em;
+}
+.content__hint span {
+  color: #bf0426;
+}
+
 @media screen and (max-width: 1025px) {
   body {
     grid-template-columns: 1fr;
@@ -350,6 +359,9 @@ footer::before {
   .works {
     grid-template-columns: 1fr;
   }
+}
+.about .contacts a {
+  font-size: 1rem;
 }
 .about .expertise__text-block {
   display: flex;

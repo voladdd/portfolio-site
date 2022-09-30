@@ -1,7 +1,13 @@
 @use "../abstracts/layouts" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/typography" as *;
 
 .about {
+  .contacts {
+    a {
+      font-size: $font-size-medium;
+    }
+  }
   .expertise {
     &__text-block {
       display: flex;
