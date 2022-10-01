@@ -3,7 +3,11 @@
 @use "../abstracts/typography" as *;
 
 .about {
-  .contacts {
+  ul li {
+    color: $color-gray;
+  }
+  .contacts,
+  .about-me {
     a {
       font-size: $font-size-medium;
     }
@@ -12,15 +16,26 @@
     &__text-block {
       display: flex;
       flex-direction: row;
-      li {
-        color: $color-gray;
-      }
     }
     .text-block:nth-child(1) {
       margin-right: 2rem;
     }
   }
+  .experience {
+    p:nth-child(1),
+    p:nth-child(4),
+    ul {
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding: 0;
+      list-style: disc;
+      padding-inline-start: 20px;
+    }
+  }
   h3 {
     color: $color-main;
+    margin-bottom: 1rem;
+    font-family: $font-type-second;
   }
 }

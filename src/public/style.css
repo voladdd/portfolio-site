@@ -32,6 +32,7 @@ section a {
 section h2,
 section h3 {
   font-size: 0.9rem;
+  font-weight: 500;
 }
 section p,
 section li {
@@ -57,7 +58,7 @@ section {
   margin-bottom: 3rem;
 }
 section p {
-  color: #a8a8a8;
+  color: #999999;
 }
 section p:not(:last-child) {
   margin-bottom: 2rem;
@@ -77,7 +78,7 @@ section p {
 
 .content__hint {
   font-family: "Roboto";
-  color: #a8a8a8;
+  color: #999999;
   margin-bottom: 2em;
 }
 .content__hint span {
@@ -236,7 +237,7 @@ footer::before {
   height: 0.05rem;
   grid-column: 1/3;
   position: absolute;
-  background-color: #a8a8a8;
+  background-color: #999999;
 }
 
 .burger {
@@ -315,7 +316,7 @@ footer::before {
 .works figure .card a {
   position: absolute;
   opacity: 0;
-  color: #a8a8a8;
+  color: #999999;
 }
 .works figure .card a:hover {
   color: #f2f2f2;
@@ -348,7 +349,7 @@ footer::before {
   color: #bf0426;
 }
 .works p {
-  color: #a8a8a8;
+  color: #999999;
 }
 .works img {
   width: 100%;
@@ -360,21 +361,34 @@ footer::before {
     grid-template-columns: 1fr;
   }
 }
-.about .contacts a {
+.about ul li {
+  color: #999999;
+}
+.about .contacts a,
+.about .about-me a {
   font-size: 1rem;
 }
 .about .expertise__text-block {
   display: flex;
   flex-direction: row;
 }
-.about .expertise__text-block li {
-  color: #a8a8a8;
-}
 .about .expertise .text-block:nth-child(1) {
   margin-right: 2rem;
 }
+.about .experience p:nth-child(1),
+.about .experience p:nth-child(4),
+.about .experience ul {
+  margin-bottom: 1rem;
+}
+.about .experience ul {
+  padding: 0;
+  list-style: disc;
+  padding-inline-start: 20px;
+}
 .about h3 {
   color: #bf0426;
+  margin-bottom: 1rem;
+  font-family: "Roboto";
 }
 
 /*# sourceMappingURL=style.css.map */
