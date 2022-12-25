@@ -69,7 +69,7 @@ section img {
 section a,
 section span {
   text-transform: none;
-  color: #bf0426;
+  color: #6b9fbf;
 }
 section a,
 section p {
@@ -82,7 +82,7 @@ section p {
   margin-bottom: 2em;
 }
 .content span {
-  color: #bf0426;
+  color: #6b9fbf;
 }
 
 @media screen and (max-width: 1025px) {
@@ -110,7 +110,8 @@ ul[role=list] {
 
 /* Set core body defaults */
 body {
-  background-color: #f2f2f2;
+  background-color: #101010;
+  color: #f2f2f2;
 }
 
 img,
@@ -171,7 +172,7 @@ header li.open img, header li:hover img {
   content: url(../../assets/icons/folder.open.svg);
 }
 header li.open a, header li:hover a {
-  color: #bf0426;
+  color: #6b9fbf;
 }
 
 @media screen and (max-width: 1025px) {
@@ -185,7 +186,7 @@ header li.open a, header li:hover a {
     justify-self: right;
   }
   header nav {
-    background-color: #f2f2f2;
+    background-color: #101010;
     position: absolute;
     width: inherit;
     display: grid;
@@ -227,7 +228,7 @@ footer p {
 }
 footer a,
 footer a:visited {
-  color: #bf0426;
+  color: #6b9fbf;
 }
 
 footer::before {
@@ -255,14 +256,14 @@ footer::before {
   height: 0.15rem;
   width: 30px;
   top: 2.5em;
-  background-color: #0d0d0d;
+  background-color: #f2f2f2;
 }
 .burger .icon:before {
   transition-duration: 0.5s;
   position: absolute;
   width: 30px;
   height: 0.15rem;
-  background-color: #0d0d0d;
+  background-color: #f2f2f2;
   content: "";
   top: -10px;
 }
@@ -271,7 +272,7 @@ footer::before {
   position: absolute;
   width: 30px;
   height: 0.15rem;
-  background-color: #0d0d0d;
+  background-color: #f2f2f2;
   content: "";
   top: 10px;
 }
@@ -281,11 +282,11 @@ footer::before {
 }
 .burger.show .icon:before {
   transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
-  background-color: #bf0426;
+  background-color: #6b9fbf;
 }
 .burger.show .icon:after {
   transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
-  background-color: #bf0426;
+  background-color: #6b9fbf;
 }
 .burger:hover {
   cursor: pointer;
@@ -352,7 +353,7 @@ footer::before {
 }
 .works figure .card:hover,
 .works figure .card-code:hover {
-  background-color: #0d0d0d;
+  background-color: #101010;
 }
 .works figure .card:hover a,
 .works figure .card-code:hover a {
@@ -371,7 +372,7 @@ footer::before {
   margin-top: 0.25rem;
 }
 .works h2 {
-  color: #bf0426;
+  color: #6b9fbf;
 }
 .works p {
   color: #999999;
@@ -411,7 +412,7 @@ footer::before {
   padding-inline-start: 20px;
 }
 .about h3 {
-  color: #bf0426;
+  color: #6b9fbf;
   margin-bottom: 1rem;
   font-family: "Roboto";
 }
