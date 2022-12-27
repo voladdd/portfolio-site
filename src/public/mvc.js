@@ -1,3 +1,26 @@
+// Animations
+const CardInProgressAnimation = (title) => {
+  const cardsCaptions = document.querySelectorAll(
+    "#card__in_progress-animation"
+  );
+  const states = [
+    `${title}`,
+    `${title}.`,
+    `${title}..`,
+    `${title}...`,
+    `${title}..`,
+    `${title}.`,
+  ];
+  let stateCount = 0;
+  let statesLength = states.length;
+  setInterval(() => {
+    cardsCaptions.forEach((caption) => {
+      caption.textContent = states[stateCount];
+    });
+    stateCount = (stateCount + 1) % statesLength;
+  }, 300);
+};
+
 // Model
 
 const cardTypes = {
@@ -199,12 +222,20 @@ const view = {
           }
         });
       }
-      this.categoriesListElem.innerHTML += `<h2 onclick="controller.setCurrentCategory(${i})" class="content__categoryTitle ${
-        isActive ? "active" : ""
-      }">${category.categoryTitle}</h2>${
+      this.categoriesListElem.innerHTML += `<h2 onclick="(() => {
+        controller.setCurrentCategory(${i});
+        let contentHint = document.getElementsByClassName('content__hint')[0];
+        let contentHintRect = contentHint.getBoundingClientRect();
+        controller.scrollToY(contentHintRect.top + contentHintRect.y + window.scrollY);
+      })(this)" class="content__categoryTitle ${isActive ? "active" : ""}">${
+        category.categoryTitle
+      }</h2>${
         worksHTML.length > 0 ? `<div class="works">${worksHTML}</div>` : ""
       }`;
     }
+
+    //RENDER ANIMATIONS
+    CardInProgressAnimation("in progress");
   },
 };
 
@@ -221,6 +252,9 @@ const controller = {
   getCategories() {
     return model.categories;
   },
+  scrollToY(y) {
+    scrollTo({ top: y, behavior: "smooth" });
+  },
   setCurrentCategory(categoryId) {
     if (categoryId === model.currentCategory.id) {
       model.currentCategory = "";
@@ -228,7 +262,6 @@ const controller = {
       model.currentCategory = model.categories[categoryId];
     }
     view.render();
-    scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 
