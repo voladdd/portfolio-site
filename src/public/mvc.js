@@ -131,7 +131,7 @@ const model = {
 
 // View
 
-const categoriesListView = {
+const view = {
   init() {
     this.categoriesListElem = document.getElementById("categoriesList");
 
@@ -140,9 +140,7 @@ const categoriesListView = {
 
   render() {
     let category;
-
     const categories = controller.getCategories();
-
     this.categoriesListElem.innerHTML = "";
 
     for (let i = 0; i < categories.length; i++) {
@@ -195,12 +193,10 @@ const categoriesListView = {
           </figure>`;
         }
       });
-      this.categoriesListElem.innerHTML += `<h2 class="content__hint"><span>${category.categoryTitle}</span></h2><div class="works">${worksHTML}</div>`;
+      this.categoriesListElem.innerHTML += `<h2 onclick="controller.setCurrentCategory(${i})" class="content__hint"><span>${category.categoryTitle}</span></h2><div class="works">${worksHTML}</div>`;
     }
   },
 };
-
-const categoryView = {};
 
 // Controller
 
@@ -208,7 +204,7 @@ const controller = {
   init() {
     model.currentCategory = model.categories[0];
 
-    categoriesListView.init();
+    view.init();
   },
   getCurrenCategory() {
     return model.currentCategory;
@@ -216,8 +212,8 @@ const controller = {
   getCategories() {
     return model.categories;
   },
-  setCurrentCategory(category) {
-    model.currentCategory = category;
+  setCurrentCategory(categoryId) {
+    model.currentCategory = model.categories[categoryId];
   },
 };
 
