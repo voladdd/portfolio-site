@@ -17,6 +17,7 @@ const model = {
   currentCategory: null,
   categories: [
     {
+      id: 0,
       categoryTitle: categories.frontendBackend,
       works: [
         {
@@ -58,6 +59,7 @@ const model = {
       ],
     },
     {
+      id: 1,
       categoryTitle: categories.frontend,
       works: [
         {
@@ -111,6 +113,7 @@ const model = {
       ],
     },
     {
+      id: 2,
       categoryTitle: categories.backend,
       works: [
         {
@@ -134,66 +137,73 @@ const model = {
 const view = {
   init() {
     this.categoriesListElem = document.getElementById("categoriesList");
-
     this.render();
   },
 
   render() {
     let category;
+    const currentCategory = controller.getCurrentCategory();
     const categories = controller.getCategories();
+    let isActive = false;
     this.categoriesListElem.innerHTML = "";
 
     for (let i = 0; i < categories.length; i++) {
       category = categories[i];
-      //Render every work
       let worksHTML = "";
-      category.works.forEach((work) => {
-        if (work.type === cardTypes.code) {
-          worksHTML += `<figure>
-          <div class="card-code">
-            <a href="${work.codeLink}">#CODE</a>
-            <img src="${work.src}"/>
-          </div>
-          <figcaption>
-            <h2>${work.title}</h2>
-            <p>${work.body}</p>
-            ${
-              work.techType === cardTypes.techFullstack
-                ? `<p><span>Frontend:</span> ${work.techFrontend}</p> <p><span>Backend:</span> ${work.techBackend}</p>`
-                : `<p>
-                  <span>Tech:</span> ${work.tech}
-                </p>`
-            }
-            <p>${work.date}
-            ${
-              work.dateContinued.length > 0
-                ? `<span id="card__in_progress-animation">${work.dateContinued}</span></p>`
-                : ""
-            }
-          </figcaption>
-        </figure>`;
-        } else if (work.type === cardTypes.livecode) {
-          worksHTML += `<figure>
-            <div class="card">
-              <a href="${work.liveLink}">#LIVE</a>
-              <a href="${work.codeLink}">#CODE</a>
-              <img src="${work.src}"/>
-            </div>
-            <figcaption>
-              <h2>${work.title}</h2>
-              <p>${work.body}</p>
-              <p><span>Tech:</span> ${work.tech}</p>
-              <p>${work.date}
-              ${
-                work.dateContinued.length > 0
-                  ? `<span id="card__in_progress-animation">${work.dateContinued}</span></p>`
-                  : ""
-              }
-            </figcaption>
-          </figure>`;
-        }
-      });
-      this.categoriesListElem.innerHTML += `<h2 onclick="controller.setCurrentCategory(${i})" class="content__hint"><span>${category.categoryTitle}</span></h2><div class="works">${worksHTML}</div>`;
+      isActive = category.id === currentCategory.id;
+      if (isActive) {
+        category.works.forEach((work) => {
+          if (work.type === cardTypes.code) {
+            worksHTML += `<figure>
+              <div class="card-code">
+                <a href="${work.codeLink}">#CODE</a>
+                <img src="${work.src}"/>
+              </div>
+              <figcaption>
+                <h2>${work.title}</h2>
+                <p>${work.body}</p>
+                ${
+                  work.techType === cardTypes.techFullstack
+                    ? `<p><span>Frontend:</span> ${work.techFrontend}</p> <p><span>Backend:</span> ${work.techBackend}</p>`
+                    : `<p>
+                      <span>Tech:</span> ${work.tech}
+                    </p>`
+                }
+                <p>${work.date}
+                ${
+                  work.dateContinued.length > 0
+                    ? `<span id="card__in_progress-animation">${work.dateContinued}</span></p>`
+                    : ""
+                }
+              </figcaption>
+            </figure>`;
+          } else if (work.type === cardTypes.livecode) {
+            worksHTML += `<figure>
+                <div class="card">
+                  <a href="${work.liveLink}">#LIVE</a>
+                  <a href="${work.codeLink}">#CODE</a>
+                  <img src="${work.src}"/>
+                </div>
+                <figcaption>
+                  <h2>${work.title}</h2>
+                  <p>${work.body}</p>
+                  <p><span>Tech:</span> ${work.tech}</p>
+                  <p>${work.date}
+                  ${
+                    work.dateContinued.length > 0
+                      ? `<span id="card__in_progress-animation">${work.dateContinued}</span></p>`
+                      : ""
+                  }
+                </figcaption>
+              </figure>`;
+          }
+        });
+      }
+      this.categoriesListElem.innerHTML += `<h2 onclick="controller.setCurrentCategory(${i})" class="content__categoryTitle ${
+        isActive ? "active" : ""
+      }">${category.categoryTitle}</h2>${
+        worksHTML.length > 0 ? `<div class="works">${worksHTML}</div>` : ""
+      }`;
     }
   },
 };
@@ -203,17 +213,22 @@ const view = {
 const controller = {
   init() {
     model.currentCategory = model.categories[0];
-
     view.init();
   },
-  getCurrenCategory() {
+  getCurrentCategory() {
     return model.currentCategory;
   },
   getCategories() {
     return model.categories;
   },
   setCurrentCategory(categoryId) {
-    model.currentCategory = model.categories[categoryId];
+    if (categoryId === model.currentCategory.id) {
+      model.currentCategory = "";
+    } else {
+      model.currentCategory = model.categories[categoryId];
+    }
+    view.render();
+    scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 
