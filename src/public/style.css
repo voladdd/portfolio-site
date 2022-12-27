@@ -69,7 +69,7 @@ section img {
 section a,
 section span {
   text-transform: none;
-  color: #6b9fbf;
+  color: #9bb2c1;
 }
 section a,
 section p {
@@ -82,7 +82,7 @@ section p {
   margin-bottom: 2em;
 }
 .content span {
-  color: #6b9fbf;
+  color: #9bb2c1;
 }
 
 @media screen and (max-width: 1025px) {
@@ -172,7 +172,7 @@ header li.open img, header li:hover img {
   content: url(../../assets/icons/folder.open.svg);
 }
 header li.open a, header li:hover a {
-  color: #6b9fbf;
+  color: #9bb2c1;
 }
 
 @media screen and (max-width: 1025px) {
@@ -228,7 +228,7 @@ footer p {
 }
 footer a,
 footer a:visited {
-  color: #6b9fbf;
+  color: #9bb2c1;
 }
 
 footer::before {
@@ -282,11 +282,11 @@ footer::before {
 }
 .burger.show .icon:before {
   transform: rotateZ(45deg) scaleX(1.25) translate(2px, 5px);
-  background-color: #6b9fbf;
+  background-color: #9bb2c1;
 }
 .burger.show .icon:after {
   transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
-  background-color: #6b9fbf;
+  background-color: #9bb2c1;
 }
 .burger:hover {
   cursor: pointer;
@@ -372,7 +372,7 @@ footer::before {
   margin-top: 0.25rem;
 }
 .works h2 {
-  color: #6b9fbf;
+  color: #9bb2c1;
 }
 .works p {
   color: #999999;
@@ -412,7 +412,7 @@ footer::before {
   padding-inline-start: 20px;
 }
 .about h3 {
-  color: #6b9fbf;
+  color: #9bb2c1;
   margin-bottom: 1rem;
   font-family: "Roboto";
 }
