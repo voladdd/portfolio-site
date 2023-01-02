@@ -202,6 +202,7 @@ header li.open a, header li:hover a {
     position: absolute;
     width: inherit;
     display: grid;
+    justify-content: space-between;
     grid-template-columns: 0.5fr 0.5fr;
     align-items: center;
     grid-template-rows: 100px max-content;
