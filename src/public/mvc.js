@@ -52,8 +52,8 @@ const model = {
           body: "E-commerce application for bakery store, with different roles such as User, Seller, Admin, and specific functionalites for each one",
           techFrontend: "Typescript, React, Bootstrap, Axios",
           techBackend: "Typescript, Nestjs, Sequelize, PostgreSQL",
-          date: "november/2022 -",
-          dateContinued: "in progress...",
+          date: "november/2022 - december/2022",
+          dateContinued: "",
         },
         {
           type: cardTypes.code,
